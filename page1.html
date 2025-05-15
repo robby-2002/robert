@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Robert</title>
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+
+            header {
+                background-color: #1f1f1f;
+                color: #fff;
+                padding: 20px 0;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+
+            header nav ul {
+                display: flex;
+                justify-content: center;
+                list-style: none;
+                flex-wrap: wrap;
+                background: blueviolet;
+                padding: 10px;
+            }
+
+            header nav ul li {
+                margin: 0 15px;
+            }
+
+            header nav ul li a {
+                color: white;
+                text-decoration: none;
+                padding: 5px 10px;
+            }
+
+            footer {
+                text-align: center;
+                padding: 20px;
+                background: #eee;
+                position: relative;
+                bottom: 0;
+                width: 100%;
+                margin-top: 30px;
+            }
+
+            main h1#greeting {
+                font-size: 2.5rem;
+                color: #2c3e50;
+                margin-top: 20px;
+                text-align: center;
+            }
+
+            main section {
+                background: #ffffff;
+                padding: 40px;
+                border-radius: 12px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                text-align: center;
+            }
+
+            button {
+                background-color: #007bff;
+                color: white;
+                border: none;
+                padding: 10px 18px;
+                font-size: 14px;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: background 0.3s ease;
+            }
+
+            button:hover {
+                background-color: #0056b3;
+            }
+
+            .dark-mode {
+                background-color: #12121212;
+                color: #e0e0e0;
+            }
+
+            .dark-mode header,
+            .dark-mode footer {
+                background-color: #1e1e1e;
+                color: #f5f5f5;
+            }
+
+            .dark-mode section,
+            .dark-mode .column,
+            .dark-mode .project,
+            .dark-mode form {
+                background-color: #1e1e1e;
+                color: #f5f5f5;
+                box-shadow: none;
+            }
+
+            .dark-mode a {
+                color: #90caf9;
+            }
+        </style>
+    </head>
+
+    <body onload="showGreeting()">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="page1.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="project.html">Project</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="survey.html">Survey</a></li>
+                </ul>
+            </nav>
+
+            <div style="text-align: center; margin-top: 10px;">
+                <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+            </div>
+        </header>
+
+        <main>
+            <h1 id="greeting" aria-live="polite"></h1>
+            <section>
+                <h2 style="text-align: center;">Welcome to Robert Portifolio</h2>
+                <p style="text-align: center;">Explore my projects, get to know me, and feel free to get in touch.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Robert Charles. All rights reserved.</p>
+        </footer>
+
+        <script>
+            function showGreeting() {
+                const hour = new Date().getHours();
+                let greeting;
+                if (hour < 12) greeting = "Good Morning!";
+                else if (hour < 18) greeting = "Good Afternoon!";
+                else greeting = "Good Evening!";
+
+                document.getElementById("greeting").textContent = greeting;
+            }
+
+            function toggleDarkMode() {
+                document.body.classList.toggle("dark-mode");
+            }
+        </script>
+    </body>
+</html>
